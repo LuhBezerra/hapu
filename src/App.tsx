@@ -23,6 +23,7 @@ function App() {
       <FeatureDemoSection />
       <Divider />
       <PrinciplesSection />
+      <Divider />
       <ComingSoonSection />
       <FooterSection />
     </div>
