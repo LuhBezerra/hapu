@@ -1,15 +1,20 @@
 :root {
   --color-grey-dark: #000000;
-  --color-grey-regular: #3D3D3D;
-  --color-grey-light: #DFDFDF;
-  --color-white: #FFF;
+  --color-grey-regular: #3d3d3d;
+  --color-grey-light: #dfdfdf;
+  --color-white: #fff;
 
-  --color-backgrond: #FAF9F7;
+  --color-backgrond: #faf9f7;
 
-  --brand-color-primary: #00A870;
-  --brand-color-secondary: #5E20A4;
+  --brand-color-primary: #00a870;
+  --brand-color-secondary: #5e20a4;
 
-  --overlay-header-image: linear-gradient(314.72deg, #C86DD7 -1.5%, #7E49C3 39.43%, #5912AC 86.02%);
+  --font-h1: 40px;
+  --font-h2: 28px;
+  --font-h3: 22px;
+  --font-h4: 16px;
+  --font-h5: 14px;
+  --font-link: 16px;
 }
 
 * {
