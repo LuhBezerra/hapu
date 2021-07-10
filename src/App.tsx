@@ -1,5 +1,8 @@
 import React from 'react';
+
 import './assets/styles/global.css';
+import { Divider } from './components/Divider';
+
 import {
   HeroSection,
   ProductDescriptionSection,
@@ -16,6 +19,7 @@ function App() {
       <HeroSection />
       <ProductDescriptionSection />
       <NewslleterSection />
+      <Divider />
       <FeatureDemoSection />
       <PrinciplesSection />
       <ComingSoonSection />

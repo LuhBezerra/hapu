@@ -7,13 +7,14 @@
 
 .divider-content {
   width: 100%;
-  margin-bottom: 4rem;
+  margin: 0 16px;
   border-bottom: 2px solid var(--color-grey-light);
 }
 
 @media screen and (min-width: 688px) {
   .divider-content {
     width: 80%;
+    margin: 0;
   }
 }
 
