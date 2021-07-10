@@ -21,6 +21,7 @@ function App() {
       <NewslleterSection />
       <Divider />
       <FeatureDemoSection />
+      <Divider />
       <PrinciplesSection />
       <ComingSoonSection />
       <FooterSection />

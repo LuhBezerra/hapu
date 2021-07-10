@@ -1,5 +1,85 @@
-.product-description-container {
-  width: 100%;
-  height: 100vh;
+#principles .container {
+  height: 100%;
+  padding: 64px 16px;
+}
 
+.principles-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-text-content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-content img {
+  display: none;
+  max-width: 100%;
+
+  height: auto;
+}
+
+.principles-content h2 {
+  width: 50%;
+  text-align: center;
+  font-size: var(--font-h3);
+
+  color: var(--color-grey-regular);
+}
+
+.principles-content p {
+  text-align: center;
+  font-size: var(--font-h4);
+
+  margin-top: 16px;
+
+  color: var(--color-grey-regular);
+}
+
+.principles-content a {
+  text-align: center;
+
+  color: var(--brand-color-secondary);
+  text-decoration: underline;
+  font-size: var(--font-link);
+
+  cursor: pointer;
+
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 800px) {
+  #principles .container {
+    height: 100%;
+    padding: 0 48px;
+    margin-bottom: 0;
+  }
+
+  .principles-content {
+    padding: 64px 0;
+  }
+
+  .principles-content img {
+    display: inline;
+    padding-top: 64px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #principles .container {
+    padding: 0 128px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #principles .container {
+    height: 100%;
+    padding: 0 228px;
+  }
 }
