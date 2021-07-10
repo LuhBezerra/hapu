@@ -1,0 +1,23 @@
+#hero-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--color-white);
+}
+.hero-image-background-container {
+  background: url('../../assets/images/backgroundHeroMobile.svg') center center/cover no-repeat;
+  width: 100%;
+  height: 85vh;
+
+}
+
+@media screen and (min-width: 688px) {
+  .hero-image-background-container {
+    background: url('../../assets/images/backgroundHero@2x.svg') center center/cover no-repeat; 
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero-image-background-container {
+    background: url('../../assets/images/backgroundHero@3x.svg') center center/cover no-repeat; 
+  }
+}

@@ -1,9 +1,25 @@
 import React from 'react';
+import './assets/styles/global.css';
+import {
+  HeroSection,
+  ProductDescriptionSection,
+  NewslleterSection,
+  FeatureDemoSection,
+  PrinciplesSection,
+  ComingSoonSection,
+  FooterSection,
+} from './sections';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <HeroSection />
+      <ProductDescriptionSection />
+      <NewslleterSection />
+      <FeatureDemoSection />
+      <PrinciplesSection />
+      <ComingSoonSection />
+      <FooterSection />
     </div>
   );
 }

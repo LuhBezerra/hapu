@@ -1,0 +1,24 @@
+.divider {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+}
+
+.divider-content {
+  width: 100%;
+  margin-bottom: 4rem;
+  border-bottom: 2px solid var(--color-grey-light);
+}
+
+@media screen and (min-width: 688px) {
+  .divider-content {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .divider-content {
+    width: 60%;
+  }
+}
