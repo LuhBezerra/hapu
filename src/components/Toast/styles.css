@@ -1,0 +1,7 @@
+.Toastify__toast--success {
+  background: var(--brand-color-primary);
+}
+
+.Toastify__toast--error {
+  background: #ec5252;
+}
