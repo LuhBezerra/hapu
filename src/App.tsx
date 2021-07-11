@@ -18,6 +18,7 @@ function App() {
     <div className="App">
       <HeroSection />
       <ProductDescriptionSection />
+      <Divider />
       <NewslleterSection />
       <Divider />
       <FeatureDemoSection />
