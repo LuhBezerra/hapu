@@ -1,6 +1,208 @@
-.footer-content {
-  width: 100%;
-  height: 100vh;
-  padding: 0 28px;
+#footer-section .container {
+  height: 100%;
+  padding-top: 64px;
   background: var(--color-white);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text-content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-content h2 {
+  text-align: center;
+  font-size: var(--font-h3);
+
+  color: var(--color-grey-regular);
+}
+
+.footer-content p {
+  text-align: center;
+  font-size: var(--font-h4);
+
+  margin-top: 16px;
+
+  color: var(--color-grey-regular);
+}
+
+.footer-button-container {
+  display: flex;
+  flex-direction: row;
+
+  width: 304px;
+  height: 68px;
+  margin: 24px 0;
+
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: center;
+
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
+  background: var(--brand-color-secondary);
+  transition: background 0.3s;
+}
+
+.footer-button-container:hover {
+  background: var(--brand-color-secondary-dark);
+}
+
+.footer-content button p {
+  color: var(--color-white);
+  font-size: var(--font-h5);
+  text-align: start;
+
+  margin: 0;
+}
+
+.footer-content button p:first-child {
+  font-size: var(--font-h4);
+}
+
+.footer-content a {
+  text-align: center;
+
+  color: var(--brand-color-secondary);
+  text-decoration: underline;
+  font-size: var(--font-link);
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-content a:hover {
+  color: var(--brand-color-secondary-dark);
+}
+
+.footer-content .footer-logo-hapu-content {
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.footer-content footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content footer a {
+  text-align: center;
+
+  color: var(--color-grey-regular);
+  text-decoration: none;
+  font-size: var(--font-h5);
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-content footer a:hover {
+  color: var(--color-grey-dark);
+}
+
+.footer-content footer a {
+  margin-right: 32px;
+}
+
+.footer-content footer a:nth-child(2),
+.footer-content footer a:nth-child(5) {
+  margin-right: 0;
+}
+
+.footer-link-content {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-social-media-button-container {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+  margin-top: 24px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.footer-content span {
+  text-align: center;
+  color: var(--color-grey-regular);
+  font-size: var(--font-body-x-small);
+  padding: 24px 0;
+}
+
+@media screen and (min-width: 488px) {
+  #footer .container {
+    padding: 0 48px;
+  }
+
+  .footer-content {
+    padding: 64px 0;
+  }
+}
+
+@media screen and (min-width: 688px) {
+  #footer .container {
+    padding: 0 128px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #footer-section .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-content footer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-content footer a:nth-child(2) {
+    margin-right: 32px;
+  }
+
+  .footer-link-content {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 130px;
+  }
+
+  .footer-social-media-button-container {
+    width: auto;
+    padding-bottom: 0;
+
+    border-bottom: none;
+  }
+
+  .footer-content span {
+    padding: 0;
+    padding-top: 90px;
+  }
 }

@@ -8,6 +8,7 @@
 
   --brand-color-primary: #00a870;
   --brand-color-secondary: #5e20a4;
+  --brand-color-secondary-dark: #390d6b;
 
   --font-h1: 40px;
   --font-h2: 28px;
@@ -15,6 +16,7 @@
   --font-h4: 16px;
   --font-h5: 14px;
   --font-link: 16px;
+  --font-body-x-small: 12px;
 }
 
 * {
