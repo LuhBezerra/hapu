@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { NavBar } from '../../components/NavBar';
 import { HERO } from './constants';
 import './styles.css';
 
 export function HeroSection() {
   return (
     <section id="hero-container">
+      <NavBar />
       <div className="hero-image-background-container">
         <div className="hero-text-content">
           <h2>{HERO.title}</h2>

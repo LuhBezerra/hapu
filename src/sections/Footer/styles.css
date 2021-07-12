@@ -150,6 +150,7 @@
   color: var(--color-grey-regular);
   font-size: var(--font-body-x-small);
   padding: 24px 0;
+  margin-bottom: 64px;
 }
 
 @media screen and (min-width: 488px) {
@@ -165,6 +166,12 @@
 @media screen and (min-width: 688px) {
   #footer .container {
     padding: 0 128px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .footer-content span {
+    margin-bottom: 0px;
   }
 }
 
