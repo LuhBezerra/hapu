@@ -1,8 +1,49 @@
 import React from 'react';
+import { OptimizelyFeature, OptimizelyProvider } from '@optimizely/react-sdk';
 
+import { optimizely } from '../../services/optimizely';
 import { NavBar } from '../../components/NavBar';
 import { HERO } from './constants';
 import './styles.css';
+
+const defaultTextHeroSection = (
+  <>
+    <h2>{HERO.title}</h2>
+    <p>{HERO.description}</p>
+  </>
+);
+
+const textWithOptimizelyProvider = (
+  <OptimizelyProvider
+    optimizely={optimizely}
+    user={{
+      id: 'user10',
+    }}
+  >
+    <OptimizelyFeature feature="textherosection">
+      {(enabled, variables) => {
+        return enabled ? (
+          <>
+            <h2>
+              {variables.hero_text
+                ? /* @ts-expect-error not recognizing object with type */
+                  variables.hero_text.title
+                : HERO.title}
+            </h2>
+            <p>
+              {variables.hero_text
+                ? /* @ts-expect-error not recognizing object with type */
+                  variables.hero_text.description
+                : HERO.title}
+            </p>
+          </>
+        ) : (
+          defaultTextHeroSection
+        );
+      }}
+    </OptimizelyFeature>
+  </OptimizelyProvider>
+);
 
 export function HeroSection() {
   return (
@@ -10,8 +51,9 @@ export function HeroSection() {
       <NavBar />
       <div className="hero-image-background-container">
         <div className="hero-text-content">
-          <h2>{HERO.title}</h2>
-          <p>{HERO.description}</p>
+          {process.env.REACT_APP_USE_OPTIMIZELY
+            ? textWithOptimizelyProvider
+            : defaultTextHeroSection}
 
           <div className="hero-text-link-content">
             <a href="/">

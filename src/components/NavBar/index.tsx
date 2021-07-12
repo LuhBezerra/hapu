@@ -1,6 +1,24 @@
 import { useState } from 'react';
+import { withOptimizely } from '@optimizely/react-sdk';
+
+import { optimizely } from '../../services/optimizely';
+import { RegularButton } from '../RegularButton';
 import badgeIcon from '../../assets/icons/badgeIcon.svg';
 import './styles.css';
+
+const BUTTON_TEXT = 'Become a Nanny Share Host';
+
+function RegisterInNannyShareButton() {
+  function handleOnClick() {
+    optimizely.track('registerInNannyShare');
+  }
+
+  return <RegularButton onClick={handleOnClick}>{BUTTON_TEXT}</RegularButton>;
+}
+
+const WrappedRegisterInNannyShareButton = withOptimizely(
+  RegisterInNannyShareButton
+);
 
 export function NavBar() {
   const [showWhiteNavbar, setShowWhiteNavbar] = useState<boolean>(false);
@@ -29,7 +47,11 @@ export function NavBar() {
         </div>
 
         <div className="navBar-container-login">
-          <button>Become a Nanny Share Host</button>
+          {process.env.REACT_APP_USE_OPTIMIZELY ? (
+            <WrappedRegisterInNannyShareButton />
+          ) : (
+            <RegularButton>{BUTTON_TEXT}</RegularButton>
+          )}
           <a href="/">Sign In</a>
         </div>
       </div>

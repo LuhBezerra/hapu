@@ -1,0 +1,15 @@
+.regular-button {
+  border: none;
+  height: 44px;
+  width: 234px;
+  border-radius: 4px;
+
+  cursor: pointer;
+  color: var(--color-white);
+  background: var(--brand-color-primary);
+  transition: background 0.3s;
+}
+
+.regular-button:hover {
+  background: #008b5d;
+}
