@@ -1,10 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { OptimizelyFeature, OptimizelyProvider } from '@optimizely/react-sdk';
 
+import { useHapuContext } from '../../services/contextApi';
 import { optimizely } from '../../services/optimizely';
 import { NavBar } from '../../components/NavBar';
+import { Skeleton } from '../../components/Skeleton';
 import { HERO } from './constants';
 import './styles.css';
+
+const usingOptimizely = process.env.REACT_APP_USE_OPTIMIZELY === 'true';
+const isDevelopmentEnv = process.env.NODE_ENV === 'development';
 
 const defaultTextHeroSection = (
   <>
@@ -13,11 +18,13 @@ const defaultTextHeroSection = (
   </>
 );
 
-const textWithOptimizelyProvider = (
+const textWithOptimizelyProvider = (userIp: string) => (
   <OptimizelyProvider
     optimizely={optimizely}
     user={{
-      id: 'user10',
+      id: isDevelopmentEnv
+        ? (Math.floor(Math.random() * 999999) + 100000).toString()
+        : userIp,
     }}
   >
     <OptimizelyFeature feature="textherosection">
@@ -26,13 +33,13 @@ const textWithOptimizelyProvider = (
           <>
             <h2>
               {variables.hero_text
-                ? /* @ts-expect-error not recognizing object with type */
+                ? /* @ts-expect-error not recognizing object like type */
                   variables.hero_text.title
                 : HERO.title}
             </h2>
             <p>
               {variables.hero_text
-                ? /* @ts-expect-error not recognizing object with type */
+                ? /* @ts-expect-error not recognizing object like type */
                   variables.hero_text.description
                 : HERO.title}
             </p>
@@ -46,14 +53,30 @@ const textWithOptimizelyProvider = (
 );
 
 export function HeroSection() {
+  const { userIp, loadingUserIp, getUserIp } = useHapuContext();
+
+  useEffect(() => {
+    if (!usingOptimizely || isDevelopmentEnv) {
+      return;
+    }
+
+    getUserIp();
+  }, [getUserIp]);
+
   return (
     <section id="hero-container">
       <NavBar />
       <div className="hero-image-background-container">
         <div className="hero-text-content">
-          {process.env.REACT_APP_USE_OPTIMIZELY
-            ? textWithOptimizelyProvider
-            : defaultTextHeroSection}
+          {usingOptimizely ? (
+            loadingUserIp ? (
+              <Skeleton />
+            ) : (
+              textWithOptimizelyProvider(userIp.ip)
+            )
+          ) : (
+            defaultTextHeroSection
+          )}
 
           <div className="hero-text-link-content">
             <a href="/">
