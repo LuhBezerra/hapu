@@ -1,46 +1,175 @@
-# Getting Started with Create React App
+<h1 align="center">
+   <img alt="step 2" src=".github/logo512.png" width="200">
+    </br>
+    Hapu
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#how-to-run">How to run</a> 
+</p>
+<h1 align="center"> 
+   <img alt="step 2" src=".github/pc.png" width="1100">
+</h1>
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+This is a simplified version of Hapu’s ‘Become a Nanny Share Host’ view. The concepts applied were:
 
-### `yarn start`
+- JSX;
+- Components, props and state;
+- Lifecycle Methods;
+- Responsive design with CSS media-queries;
+- API calls;
+- Error handling;
+- Loading states;
+- SEO & accessibility;
+- A/B tests;
+- Production builds.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Typescript
+- React.js
+- Optimizely
 
-### `yarn test`
+## How to run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Development environment
 
-### `yarn build`
+- ### **Prerequisites**
+  - You must have Node.js installed on your computer
+  - You must have Git installed and configured on your computer.
+  - Also, you need to have a package manager either NPM or Yarn.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+   $ git clone https://github.com/LuhBezerra/hapu.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Running the Application:
 
-### `yarn eject`
+```sh
+   $ cd hapu
+   # Installing project dependencies.
+   $ yarn # or npm install
+   # Start the web application
+   $ yarn start # or npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### **3. Running the Aplication with A/B tests:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The test performed consists of changing the Title and Description of the Hero section, in order to identify which of the texts best encourages user registration on the site.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The trigger of the event is on the 'Become a Nanny Share Host' button, as shown in the screenshot below:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. The platform used to collect the test data was **Optimizely**, so to proceed with the execution it is necessary to register on the following platform: https://app.optimizely.com/
 
-## Learn More
+2. Now that you are registered, go to Settings and copied the development SDK key
+   <img alt="step 2" src=".github/1.png" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Back to the code, create a file called **.env** and with the following variables:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+ REACT_APP_OPTIMIZELY_KEY=<your_SDK_key>
+ REACT_APP_USE_OPTIMIZELY=true
+
+ #With that the application will be ready to run the tests
+```
+
+#### **3.1. Registering flags, variables and events in Optimizely**
+
+1. Go to **Flags** > **Create Flag**
+   <img alt="step 3.1.1" src=".github/2.png" />
+
+2. Enter the name of the flag with type **JSON**
+
+- 2.1 The key of the flag has to be:
+  textherosection
+
+3. Click on the flag > **Default Variables** > **+** > **Variable Key** > **Default Value**
+   <img alt="step 3.1.3" src=".github/3.png" />
+   3.3 Name of **Variable Key**:
+
+   ```
+    hero_text
+   ```
+
+   3.4 In **Default Value** copy this code:
+
+```json
+{
+  "title": "Easily create or join a local nanny share with Hapu",
+  "description": "Hapu is Airbnb for nanny share. Share your home, nanny and costs and create new flexible, affordable solutions in childcare."
+}
+```
+
+4. Now go to **Variations** > **+** > **Name** >**Variables**
+   <img alt="step 3.1.4" src=".github/4.png" />
+   4.1 Name:
+
+```
+    main_text
+```
+
+- 4.2. Variables
+
+```json
+{
+  "title": "Easily create or join a local nanny share with Hapu",
+  "description": "Hapu is Airbnb for nanny share. Share your home, nanny and costs and create new flexible, affordable solutions in childcare."
+}
+```
+
+- 4.3 Go to again **+** > **Name** >**Variables**
+- 4.3.1 Name:
+
+```
+    secundary_text
+```
+
+- 4.3.2. Variables
+
+```json
+{
+  "title": "Create the childcare you need at a price you can afford",
+  "description": "Connect with other local families to share a nanny from as low as $10.00/hr each. Create your family profile today to get started."
+}
+```
+
+5. Creating event
+   <img alt="step 5" src=".github/5.png" />
+
+5.1 The name of the flag has to be:
+
+    registerInNannyShare
+
+Congratulations! Now you can run the tests, so let's go
+
+#### **3.2 Running test**
+
+1. Go back to the created flag
+
+- 1.1 **Development** > **Add rule** > insert a **Name**
+  <img alt="step 1.1" src=".github/6.png" />
+
+2.  - Put **Percentage Included**
+    - Put **Metrics**(registerInNannyShare)
+    - Put **Deliver Variations** (main_text, secundary_text)
+
+    <img alt="step 1.2" src=".github/7.png" />
+
+3.  Turn on the flag
+
+---
+
+<h3>!!! Is very important that the names of the variables are as described above for the test to work !!! </h3>
+
+---
+
+- If all goes well, your application's console will be like this:
+  <img alt="console" src=".github/8.png" />
+
+- To see the results, go to optimizely's **Reports** tab.
