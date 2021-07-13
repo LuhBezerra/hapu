@@ -54,6 +54,12 @@
   margin-top: 24px;
 }
 
+@media screen and (min-width: 688px) {
+  #principles .container {
+    padding: 64px 128px;
+  }
+}
+
 @media screen and (min-width: 800px) {
   #principles .container {
     height: 100%;

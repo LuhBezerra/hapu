@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FEATURE_DEMO } from './constants';
 import './styles.css';
 

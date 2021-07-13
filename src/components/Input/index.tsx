@@ -7,7 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
+export const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
   return (
     <div className="input-block">
       <input
@@ -20,5 +20,3 @@ const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
     </div>
   );
 };
-
-export default Input;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CircularButton } from '../../components/CircularButton';
 
 import { FOOTER } from './constants';
@@ -48,16 +47,19 @@ export function FooterSection() {
               <CircularButton
                 icon={FOOTER.facebookIcon}
                 name="facebook icon"
+                title="Facebook"
                 href={FOOTER.facebookLink}
               />
               <CircularButton
                 icon={FOOTER.twitterIcon}
                 name="twitter icon"
+                title="Twitter"
                 href={FOOTER.twitterLink}
               />
               <CircularButton
                 icon={FOOTER.instagramIcon}
                 name="instagram icon"
+                title="Instagram"
                 href={FOOTER.instagramLink}
               />
             </div>

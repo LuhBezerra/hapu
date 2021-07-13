@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './assets/styles/global.css';
 import { Divider } from './components/Divider';
 

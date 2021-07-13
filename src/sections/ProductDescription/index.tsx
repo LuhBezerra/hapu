@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PRODUCT_DESCRIPTION } from './constants';
 import './styles.css';
 

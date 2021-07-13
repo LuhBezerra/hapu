@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PRINCIPLES } from './constants';
 import './styles.css';
 

@@ -3,11 +3,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './styles.css';
 
-interface IToast {
+interface ToastProps {
   type: 'success' | 'error';
   message: string;
 }
-export function toastMessage({ type, message }: IToast) {
+export function toastMessage({ type, message }: ToastProps) {
   switch (type) {
     case 'success':
       toast.success(message);
@@ -19,5 +19,5 @@ export function toastMessage({ type, message }: IToast) {
 }
 
 export function Toast() {
-  return <ToastContainer autoClose={4000} hideProgressBar />;
+  return <ToastContainer hideProgressBar />;
 }

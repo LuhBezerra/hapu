@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { COMING_SOON } from './constants';
 import './styles.css';
 

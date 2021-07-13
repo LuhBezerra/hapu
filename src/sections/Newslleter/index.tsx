@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-import Input from '../../components/Input';
+import { Input } from '../../components/Input';
 import { Spinner } from '../../components/Spinner';
 import { Toast, toastMessage } from '../../components/Toast';
 import { registerUserOnNewslleter } from './api';

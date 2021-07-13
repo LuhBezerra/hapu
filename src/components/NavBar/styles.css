@@ -117,7 +117,7 @@
 }
 
 @media screen and (min-width: 992px) {
-  #navBar {
+  .navBar {
     padding: 0 20px;
   }
 }
