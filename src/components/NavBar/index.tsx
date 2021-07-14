@@ -36,24 +36,27 @@ export function NavBar() {
   return (
     <nav className={showWhiteNavbar ? 'navBar active' : 'navBar'}>
       <div className="navBar-container">
-        <div className="navBar-container-options">
-          <a href="/">
-            <img src={badgeIcon} alt="Badge Hapu" />
-          </a>
+        <div className="navBar-content">
 
-          <a href="/">Create Your Nanny Share</a>
-          <a href="/">Browse Shares</a>
-          <a href="/">Our Story</a>
-        </div>
+          <div className="navBar-container-options">
+            <a href="/">
+              <img src={badgeIcon} alt="Badge Hapu" />
+            </a>
 
-        <div className="navBar-container-login">
-          {process.env.REACT_APP_USE_OPTIMIZELY ? (
-            <WrappedRegisterInNannyShareButton />
-          ) : (
-            <RegularButton>{BUTTON_TEXT}</RegularButton>
-          )}
-          <a href="/">Sign In</a>
-        </div>
+            <a href="/">Create Your Nanny Share</a>
+            <a href="/">Browse Shares</a>
+            <a href="/">Our Story</a>
+          </div>
+
+          <div className="navBar-container-login">
+            {process.env.REACT_APP_USE_OPTIMIZELY ? (
+              <WrappedRegisterInNannyShareButton />
+              ) : (
+                <RegularButton>{BUTTON_TEXT}</RegularButton>
+                )}
+            <a href="/">Sign In</a>
+          </div>
+          </div>
       </div>
     </nav>
   );

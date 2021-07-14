@@ -1,10 +1,22 @@
+#product-description  {
+  display: flex;
+  justify-content: center;
+}
+
+#product-description .container {
+  min-height: 750px;
+  max-height: 792px;
+  padding: 0 16px;
+}
+
 .product-description-content {
   display: flex;
   flex-direction: column;
   height: 100%;
-
+  width: 100%;
   justify-content: center;
   align-items: center;
+  
 }
 
 .product-description-text-content {
@@ -65,10 +77,9 @@
 
 @media screen and (min-width: 1300px) {
   #product-description .container {
-    height: 632px;
-    padding-left: 228px;
-    padding-right: 128px;
+    min-height: 632px;
   }
+
   .product-description-content {
     display: grid;
 

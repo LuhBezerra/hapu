@@ -1,13 +1,20 @@
+#principles  {
+  display: flex;
+  justify-content: center;
+}
+
 #principles .container {
+  min-height: 476px;
+  max-height: 876px;
   height: 100%;
-  padding: 64px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .principles-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .principles-text-content {
@@ -20,9 +27,10 @@
 
 .principles-content img {
   display: none;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1524px;
 
-  height: auto;
+  height: 100%;
 }
 
 .principles-content h2 {
@@ -54,16 +62,9 @@
   margin-top: 24px;
 }
 
-@media screen and (min-width: 688px) {
-  #principles .container {
-    padding: 64px 128px;
-  }
-}
-
 @media screen and (min-width: 800px) {
   #principles .container {
     height: 100%;
-    padding: 0 48px;
     margin-bottom: 0;
   }
 
@@ -79,13 +80,13 @@
 
 @media screen and (min-width: 900px) {
   #principles .container {
-    padding: 0 128px;
+    height: 876px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   #principles .container {
     height: 100%;
-    padding: 0 228px;
+    
   }
 }

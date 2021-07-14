@@ -66,7 +66,10 @@ export function HeroSection() {
   return (
     <section id="hero-container">
       <NavBar />
+      <div className="hero-content">
       <div className="hero-image-background-container">
+        <div className="hero-image-background-content">
+
         <div className="hero-text-content">
           {usingOptimizely ? (
             loadingUserIp ? (
@@ -93,13 +96,15 @@ export function HeroSection() {
           alt="feature demo about match with nanny"
         />
       </div>
-
+      </div>
+      
       <div className="hero-white-background-container">
         <div>
           <img src={HERO.profileInformation.avatar} alt="profile" />
           <a href="/">{HERO.profileInformation.description}</a>
           <span>Wednesday, Thursday, Friday - 7:30 - 5:30</span>
         </div>
+      </div>
       </div>
     </section>
   );

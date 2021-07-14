@@ -5,6 +5,14 @@
   height: 64px;
   padding: 0 16px;
   background: transparent;
+
+}
+
+.navBar-container {
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
 }
 
 .navBar.active {
@@ -18,23 +26,25 @@
   color: var(--color-grey-regular);
 }
 
-.navBar.active .navBar-container {
+.navBar.active .navBar-content{
   height: 100%;
   justify-content: center;
   align-items: center;
 }
 
-.navBar.active .navBar-container a:first-child {
+.navBar.active .navBar-content a:first-child {
   display: none;
 }
 
-.navBar-container {
+.navBar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1524px;
 }
 
-.navBar-container a {
+.navBar-content a {
   cursor: pointer;
 
   text-decoration: none;
@@ -44,11 +54,11 @@
   transition: background 0.3s;
 }
 
-.navBar-container a:hover {
+.navBar-content a:hover {
   color: rgb(238, 238, 238);
 }
 
-.navBar-container a + a {
+.navBar-content a + a {
   display: none;
   margin-left: 24px;
 }
@@ -97,16 +107,16 @@
     height: 68px;
   }
 
-  .navBar.active .navBar-container {
+  .navBar.active .navBar-content{
     height: 100%;
     justify-content: space-between;
   }
 
-  .navBar.active .navBar-container a:first-child {
+  .navBar.active .navBar-content a:first-child {
     display: inline;
   }
 
-  .navBar-container a + a {
+  .navBar-content a + a {
     display: inline;
     margin-left: 32px;
   }

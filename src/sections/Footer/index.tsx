@@ -11,7 +11,7 @@ export function FooterSection() {
           <h2>{FOOTER.title}</h2>
           <p>{FOOTER.description}</p>
 
-          <button className="footer-button-container">
+          <button className="footer-button-container" >
             <img
               className="footer-image-content"
               src={FOOTER.buttonIcon}
@@ -25,7 +25,7 @@ export function FooterSection() {
 
           <a href="/">{FOOTER.link}</a>
 
-          <footer>
+          <footer >
             <img
               className="footer-logo-hapu-content"
               src={FOOTER.logoHapu}
