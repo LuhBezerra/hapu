@@ -7,7 +7,8 @@
 <p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#how-to-run">How to run</a> 
+<a href="#how-to-run">How to run</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#how-to-create-builds">How to create builds</a> 
 </p>
 <h1 align="center"> 
    <img alt="step 2" src=".github/pc.png" width="1100">
@@ -15,7 +16,7 @@
 
 ## About
 
-This is a simplified version of Hapu’s ‘Become a Nanny Share Host’ view. The concepts applied were:
+This is a simplified version of Hapu’s ‘Become a Nanny Share Host’ landing page. The concepts applied were:
 
 - JSX;
 - Components, props and state;
@@ -172,4 +173,29 @@ Congratulations! Now you can run the tests, so let's go
 - If all goes well, your application's console will be like this:
   <img alt="console" src=".github/8.png" />
 
-- To see the results, go to optimizely's **Reports** tab.
+- To see the results, go to optimizely's **Reports** tab!
+
+# How to create builds
+
+The hosting platform will be **[Vercel](https://vercel.com/)**, so you need to have an account on it (preferably your own github)
+
+1. Import github project
+  <img alt="step vercel-1" src=".github/vercel-1.png" />
+
+2. Select 'PERSONAL ACCOUNT'
+  <img alt="step vercel-2" src=".github/vercel-2.png" />
+
+3. Enter the environment variables
+* Here you will have to go back to **Optimizely** and get the **production SDK_key**
+  <img alt="step vercel-3" src=".github/vercel-3.png" />
+3.1. Click on 'Deploy'
+
+4. Ready! Now your application is online 🎉 🎉
+  <img alt="step vercel-4" src=".github/vercel-4.png" />
+
+---
+
+ 
+<h3>!!! To do the A/B tests in the production environment, it will be the same steps shown in the previous section. !!! </h3>
+
+---
