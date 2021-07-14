@@ -82,7 +82,7 @@ export function HeroSection() {
           )}
 
           <div className="hero-text-link-content">
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=lao2bxWgqOg" target="_blank" rel="noreferrer">
               {' '}
               <img src={HERO.playButtonIcon} title="Play" alt="play button" />
               {HERO.link}

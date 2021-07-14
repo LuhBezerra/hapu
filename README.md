@@ -1,7 +1,9 @@
 <h1 align="center">
-   <img alt="step 2" src=".github/logo512.png" width="200">
-    </br>
+   <img alt="step 2" src=".github/logo512.png" width="200"/>
+    <br/>
     Hapu
+    <br/>
+  <a href="https://hapu.vercel.app/">https://hapu.vercel.app/</a>
 </h1>
 
 <p align="center">
